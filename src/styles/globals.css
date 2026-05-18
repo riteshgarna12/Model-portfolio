@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* ── Reset ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: #0a0a0a; color: #f5f0eb; font-family: 'Playfair Display', Georgia, serif; overflow-x: hidden; }
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: #0a0a0a; }
+::-webkit-scrollbar-thumb  { background: #C8A96E; border-radius: 2px; }
+
+/* ── Animation classes ────────────────────────────── */
+.fade-up  { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.fade-left  { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-left.visible { opacity: 1; transform: translateX(0); }
+
+.fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-right.visible { opacity: 1; transform: translateX(0); }
+
+.scale-in { opacity: 0; transform: scale(0.9); transition: opacity 0.7s ease, transform 0.7s ease; }
+.scale-in.visible { opacity: 1; transform: scale(1); }
+
+/* ── Reusable atoms ───────────────────────────────── */
+.gold-line    { width: 60px; height: 2px; background: #C8A96E; }
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C8A96E;
+  display: block;
+}
+
+/* ── Nav link ─────────────────────────────────────── */
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.nav-link:hover { color: #C8A96E; }
+
+/* ── Gold button ──────────────────────────────────── */
+.btn-gold {
+  background: transparent;
+  border: 1px solid #C8A96E;
+  color: #C8A96E;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-gold:hover { background: #C8A96E; color: #0a0a0a; }
+
+/* ── Photo card ───────────────────────────────────── */
+.photo-card          { overflow: hidden; position: relative; cursor: pointer; }
+.photo-card img      { transition: transform 0.6s ease; display: block; width: 100%; }
+.photo-card:hover img { transform: scale(1.07); }
+.photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.photo-card:hover .photo-overlay { opacity: 1; }
+
+/* ── Skill bar ────────────────────────────────────── */
+.skill-bar  { background: #1a1a1a; border-radius: 2px; overflow: hidden; height: 3px; }
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #C8A96E, #e8d5a3);
+  border-radius: 2px;
+  transition: width 1.5s ease;
+}
+
+/* ── Collab card ──────────────────────────────────── */
+.collab-card { border: 1px solid #222; transition: border-color 0.3s, transform 0.3s; }
+.collab-card:hover { border-color: #C8A96E; transform: translateY(-4px); }
+
+/* ── Work card ────────────────────────────────────── */
+.work-card         { position: relative; overflow: hidden; cursor: pointer; }
+.work-card img     { transition: transform 0.7s ease; }
+.work-card:hover img { transform: scale(1.05); }
+.work-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent);
+  transform: translateY(10px);
+  transition: transform 0.4s;
+}
+.work-card:hover .work-info { transform: translateY(0); }
+
+/* ── Modal ────────────────────────────────────────── */
+.modal-bg {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Input / textarea shared style ───────────────── */
+.form-input {
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  padding: 16px 20px;
+  color: #b8b1aa;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+}
+.form-input::placeholder { color: #444; }
+.form-input:focus        { border-color: #C8A96E; }
+
+/* ── Hamburger menu (mobile) ──────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: #C8A96E;
+  transition: all 0.3s;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #0a0a0a;
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu .nav-link { font-size: 14px; letter-spacing: 5px; }
+.mobile-close {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: none;
+  border: none;
+  color: #C8A96E;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ════════════════════════════════════════
+   TABLET  (≤ 900px)
+   ════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .nav-links-desktop { display: none !important; }
+  .hamburger         { display: flex !important; }
+  .btn-gold-nav      { display: none !important; }
+}
+
+/* ════════════════════════════════════════
+   MOBILE  (≤ 600px)
+   ════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .btn-gold {
+    padding: 12px 24px !important;
+    font-size: 10px !important;
+  }
+}
