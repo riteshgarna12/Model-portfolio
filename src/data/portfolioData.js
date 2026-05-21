@@ -34,9 +34,9 @@ export const skills = [
   { name: "Runway",          level: 96 },
   { name: "Editorial",       level: 92 },
   { name: "Commercial",      level: 95 },
-  { name: "Haute Couture",   level: 95 },
   { name: "TRADITIONAL",        level: 90 },
   { name: "Beauty / Close-Up", level: 95 },
+  { name: "Brand Collaborations", level: 92 },
 ];
 
 export const works = [
@@ -47,9 +47,8 @@ export const works = [
 ];
 
 export const stats = [
-  { target: 127, suffix: "+", label: "Campaigns" },
-  { target: 48,  suffix: "+", label: "Publications" },
-  { target: 6,   suffix: "",  label: "Continents" },
+  { target: 7, suffix: "+", label: "Campaigns" },
+  { target: 10, suffix: "+", label: "Features" },
 ];
 
 export const navItems = ["About", "Photos", "Skills", "Collabs", "Works", "Contact"];
@@ -57,8 +56,8 @@ export const navItems = ["About", "Photos", "Skills", "Collabs", "Works", "Conta
 export const modelInfo = {
   name: "Bhavesh Saini",
   tagline: "Model · India · Rajasthan · Jaipur",
-  bio1: "Born in Jaipur, trained in Delhi — I've walked the runways of Milan, New York, and London for the world's most prestigious fashion houses. My work blends classical elegance with a modern, bold edge.",
-  bio2: "With over 127 campaigns and features in global publications, I bring a versatile presence to every project — from high couture to avant-garde editorial.",
+  bio1: "A 22-year-old model from Jaipur with a height of 5’11”, bringing confidence, elegance, and strong runway presence to every project. Experienced in traditional and fashion modeling with a passion for representing style and culture.",
+  bio2: "Worked in 7 fashion campaigns and participated in multiple runway shows, showcasing versatility in ethnic wear, editorial shoots, and brand promotions with professionalism and dedication.",
   measurements: [
     { key: "Height", value: "5'11\"" },
     { key: "Chest",   value: "40\"" },
@@ -67,5 +66,8 @@ export const modelInfo = {
     { key: "Shoe Size", value: "10" },
   ],
   tags: ["Promotional", "Fashion Model", "Modeling"],
-  socials: ["Instagram", "LinkedIn"],
+  socials: [
+    { name: "Instagram", link: "https://instagram.com/bhaveshsaini922" },
+    { name: "LinkedIn", link: "https://linkedin.com/in/bhavesh-saini" }
+  ],
 };

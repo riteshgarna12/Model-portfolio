@@ -42,8 +42,7 @@ const Skills = () => {
           </h2>
 
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: "#666", lineHeight: 2, marginTop: 28 }}>
-            Seven years of rigorous training across the world's fashion capitals has shaped a unique
-            skill set combining technical precision with natural expressive versatility.
+            With experience in 7 fashion campaigns and multiple runway shows, he brings confidence, versatility, and a strong presence to every project. His work reflects a blend of traditional elegance and modern fashion expression.
           </p>
 
           {/* Tags */}

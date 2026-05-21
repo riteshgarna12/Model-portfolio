@@ -53,7 +53,7 @@ const About = () => {
             border: "1px solid #222",
           }}
         >
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 40, fontWeight: 700, color: "#C8A96E" }}>3+</div>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 40, fontWeight: 700, color: "#C8A96E" }}>1+</div>
           <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, letterSpacing: 3, color: "#666", marginTop: 4 }}>
             YEARS EXPERIENCE
           </div>

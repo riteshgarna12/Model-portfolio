@@ -9,9 +9,25 @@ const Contact = () => {
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = () => {
-    alert(`Thank you, ${form.name}! Your message has been sent.`);
-    setForm({ name: "", email: "", message: "" });
+  const handleSubmit = async () => {
+  try {
+    const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    if (response.ok) {
+      alert(`Thank you, ${form.name}! Your message has been sent.`);
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      alert("Something went wrong.");
+    }
+  } catch (error) {
+    alert("Error sending message.");
+  }
   };
 
   return (
@@ -62,7 +78,7 @@ const Contact = () => {
           </h2>
 
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: "#888", marginTop: 24, lineHeight: 2 }}>
-            Available for runway, editorial, commercial campaigns, brand collaborations, and events worldwide.
+            Available for runway, editorial, commercial campaigns, brand collaborations, and events.
           </p>
 
           {/* Form */}
@@ -103,13 +119,27 @@ const Contact = () => {
           </div>
 
           {/* Socials */}
-          <div style={{ marginTop: 48, display: "flex", justifyContent: "center", gap: 32 }}>
-            {modelInfo.socials.map((social) => (
-              <span key={social} className="nav-link" style={{ fontSize: 9 }}>
-                {social}
-              </span>
-            ))}
-          </div>
+          <div
+  style={{
+    marginTop: 48,
+    display: "flex",
+    justifyContent: "center",
+    gap: 32,
+  }}
+>
+  {modelInfo.socials.map((social) => (
+    <a
+      key={social.name}
+      href={social.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="nav-link"
+      style={{ fontSize: 9, textDecoration: "none", color: "inherit" }}
+    >
+      {social.name}
+    </a>
+  ))}
+</div>
         </div>
       </div>
     </section>

@@ -61,7 +61,7 @@ const Hero = ({ scrollY, heroLoaded, onScrollTo }) => {
             transition: "opacity 0.9s 0.9s",
           }}
         >
-          Haute couture runway model &amp; editorial artist. Represented by Elite Models worldwide.
+          Passionate about representing elegance,&amp; heritage, and style through modeling. 
         </p>
 
         {/* Buttons */}
